@@ -1,26 +1,138 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fancy Form</title>
-
-  <!-- You may add more stuff here -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Swap</title>
   <link href="style.css" rel="stylesheet" />
 </head>
 
 <body>
+  <div class="container">
+    <div class="swap-card">
+      <div class="card-header">
+        <h1 class="title">Swap</h1>
+        <div class="settings-icon" title="Settings">⚙️</div>
+      </div>
 
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <h5>Swap</h5>
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
+      <form id="swap-form">
+        <!-- From Token Section -->
+        <div class="input-group">
+          <div class="input-header">
+            <label for="from-amount">You pay</label>
+            <div class="balance" id="from-balance">Balance: --</div>
+          </div>
+          <div class="input-container">
+            <input
+              type="text"
+              id="from-amount"
+              placeholder="0.00"
+              autocomplete="off"
+              inputmode="decimal"
+            />
+            <div class="token-selector" id="from-token-selector">
+              <div class="selected-token">
+                <div class="token-icon-placeholder" id="from-token-icon"></div>
+                <span class="token-symbol" id="from-token-symbol">Select token</span>
+                <span class="dropdown-arrow">▼</span>
+              </div>
+            </div>
+          </div>
+          <div class="usd-value" id="from-usd-value">$0.00</div>
+          <div class="error-message" id="from-error"></div>
+        </div>
 
-    <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
+        <!-- Swap Direction Button -->
+        <div class="swap-direction">
+          <button type="button" class="swap-button" id="swap-direction-btn" title="Swap direction">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M11 3L11 13M11 13L8 10M11 13L14 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M5 13L5 3M5 3L8 6M5 3L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
 
-    <button>CONFIRM SWAP</button>
-  </form>
+        <!-- To Token Section -->
+        <div class="input-group">
+          <div class="input-header">
+            <label for="to-amount">You receive</label>
+            <div class="balance" id="to-balance">Balance: --</div>
+          </div>
+          <div class="input-container">
+            <input
+              type="text"
+              id="to-amount"
+              placeholder="0.00"
+              autocomplete="off"
+              inputmode="decimal"
+              readonly
+            />
+            <div class="token-selector" id="to-token-selector">
+              <div class="selected-token">
+                <div class="token-icon-placeholder" id="to-token-icon"></div>
+                <span class="token-symbol" id="to-token-symbol">Select token</span>
+                <span class="dropdown-arrow">▼</span>
+              </div>
+            </div>
+          </div>
+          <div class="usd-value" id="to-usd-value">$0.00</div>
+          <div class="error-message" id="to-error"></div>
+        </div>
+
+        <!-- Exchange Rate Info -->
+        <div class="rate-info" id="rate-info" style="display: none;">
+          <div class="rate-row">
+            <span class="rate-label">Rate</span>
+            <span class="rate-value" id="rate-value">--</span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-label">Price Impact</span>
+            <span class="rate-value price-impact" id="price-impact">< 0.01%</span>
+          </div>
+          <div class="rate-row">
+            <span class="rate-label">Network Fee</span>
+            <span class="rate-value" id="network-fee">~$0.50</span>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-button" id="submit-button" disabled>
+          <span class="button-text">Select a token</span>
+          <div class="spinner" style="display: none;"></div>
+        </button>
+
+        <!-- Success Message -->
+        <div class="success-message" id="success-message" style="display: none;">
+          <span class="success-icon">✓</span>
+          <span>Swap successful!</span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Token Selection Modal -->
+  <div class="modal" id="token-modal" style="display: none;">
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Select a token</h2>
+        <button class="close-button" id="close-modal">✕</button>
+      </div>
+      <div class="search-container">
+        <input
+          type="text"
+          id="token-search"
+          placeholder="Search name or paste address"
+          autocomplete="off"
+        />
+      </div>
+      <div class="token-list" id="token-list">
+        <div class="loading-tokens">Loading tokens...</div>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 
