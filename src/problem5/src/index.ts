@@ -4,8 +4,8 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import dotenv from 'dotenv';
 import { Container } from './infrastructure/di/container';
-import { createUserRoutes } from './infrastructure/routes/userRoutes';
-import { errorHandler, notFoundHandler } from './infrastructure/middleware/errorMiddleware';
+import { createUserRoutes } from './infrastructure/routes/user-routes';
+import { errorHandler, notFoundHandler } from './infrastructure/middleware/error-middleware';
 
 // Load environment variables
 dotenv.config();

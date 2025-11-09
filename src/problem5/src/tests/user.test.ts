@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach } from '@jest/globals';
-import { UserServiceImpl } from '../application/services/UserServiceImpl';
-import { UserRepositoryImpl } from '../infrastructure/repositories/UserRepositoryImpl';
-import { CreateUserData, UpdateUserData } from '../domain/entities/User';
+import { UserServiceImpl } from '../application/services/user-service-impl';
+import { UserRepositoryImpl } from '../infrastructure/repositories/user-repository-impl';
+import { CreateUserData, UpdateUserData } from '../domain/entities/user';
 
 // Mock the database connection for testing
 jest.mock('../infrastructure/database/connection', () => ({

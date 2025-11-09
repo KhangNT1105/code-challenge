@@ -1,4 +1,4 @@
-import { User, CreateUserData, UpdateUserData, UserFilters } from '../entities/User';
+import { User, CreateUserData, UpdateUserData, UserFilters } from '../entities/user';
 
 export interface UserRepository {
   create(data: CreateUserData): Promise<User>;

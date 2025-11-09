@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach, afterEach, jest } from '@jest/globals';
-import { UserServiceImpl } from '../../application/services/UserServiceImpl';
-import { UserRepository } from '../../domain/repositories/UserRepository';
-import { CreateUserData, UpdateUserData, User, UserFilters } from '../../domain/entities/User';
+import { UserServiceImpl } from '../../application/services/user-service-impl';
+import { UserRepository } from '../../domain/repositories/user-repository';
+import { CreateUserData, UpdateUserData, User, UserFilters } from '../../domain/entities/user';
 
 // Mock the UserRepository
 const mockUserRepository: jest.Mocked<UserRepository> = {

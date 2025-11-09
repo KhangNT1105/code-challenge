@@ -2,8 +2,8 @@ import { describe, it, expect, beforeAll, afterAll, beforeEach } from '@jest/glo
 import request from 'supertest';
 import express from 'express';
 import { Container } from '../../infrastructure/di/container';
-import { createUserRoutes } from '../../infrastructure/routes/userRoutes';
-import { errorHandler, notFoundHandler } from '../../infrastructure/middleware/errorMiddleware';
+import { createUserRoutes } from '../../infrastructure/routes/user-routes';
+import { errorHandler, notFoundHandler } from '../../infrastructure/middleware/error-middleware';
 
 // Mock the database connection
 jest.mock('../../infrastructure/database/connection', () => ({

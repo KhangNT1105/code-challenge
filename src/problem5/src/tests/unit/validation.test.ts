@@ -7,7 +7,7 @@ import {
   userResponseSchema,
   usersResponseSchema,
   errorResponseSchema
-} from '../../infrastructure/validation/userValidation';
+} from '../../infrastructure/validation/user-validation';
 
 describe('Validation Schemas', () => {
   describe('createUserSchema', () => {

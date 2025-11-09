@@ -1,4 +1,4 @@
-import { User, CreateUserData, UpdateUserData, UserFilters } from '../../domain/entities/User';
+import { User, CreateUserData, UpdateUserData, UserFilters } from '../../domain/entities/user';
 
 export interface UserDataSource {
   create(data: CreateUserData): Promise<User>;

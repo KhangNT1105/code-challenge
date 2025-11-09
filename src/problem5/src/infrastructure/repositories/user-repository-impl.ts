@@ -1,6 +1,6 @@
-import { UserRepository } from '../../domain/repositories/UserRepository';
-import { User, CreateUserData, UpdateUserData, UserFilters } from '../../domain/entities/User';
-import { UserDataSource } from '../database/user_data_source';
+import { UserRepository } from '../../domain/repositories/user-repository';
+import { User, CreateUserData, UpdateUserData, UserFilters } from '../../domain/entities/user';
+import { UserDataSource } from '../database/user-data-source';
 
 export class UserRepositoryImpl implements UserRepository {
   constructor(private dataSource: UserDataSource) {}

@@ -1,10 +1,10 @@
-import { UserRepository } from '../../domain/repositories/UserRepository';
-import { UserService } from '../../domain/services/UserService';
-import { UserRepositoryImpl } from '../repositories/user_repository_impl';
-import { UserServiceImpl } from '../../application/services/UserServiceImpl';
-import { UserController } from '../controllers/UserController';
-import { UserDataSource } from '../database/user_data_source';
-import { DrizzleUserDataSource } from '../database/drizzle_user_data_source';
+import { UserRepository } from '../../domain/repositories/user-repository';
+import { UserService } from '../../domain/services/user-service';
+import { UserRepositoryImpl } from '../repositories/user-repository-impl';
+import { UserServiceImpl } from '../../application/services/user-service-impl';
+import { UserController } from '../controllers/user-controller';
+import { UserDataSource } from '../database/user-data-source';
+import { DrizzleUserDataSource } from '../database/drizzle-user-data-source';
 
 export class Container {
   private static instance: Container;

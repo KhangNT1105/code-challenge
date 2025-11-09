@@ -7,13 +7,13 @@ import {
   validateQuery, 
   validateParams,
   validateRequest 
-} from '../../infrastructure/middleware/validationMiddleware';
-import { 
-  errorHandler, 
-  notFoundHandler, 
+} from '../../infrastructure/middleware/validation-middleware';
+import {
+  errorHandler,
+  notFoundHandler,
   asyncHandler,
-  AppError 
-} from '../../infrastructure/middleware/errorMiddleware';
+  AppError
+} from '../../infrastructure/middleware/error-middleware';
 
 describe('Validation Middleware', () => {
   let mockRequest: Partial<Request>;
